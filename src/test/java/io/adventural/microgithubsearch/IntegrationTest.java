@@ -23,6 +23,9 @@ public class IntegrationTest {
         ResponseEntity<Repository[]> repositoryResponseEntity = restTemplate.getForEntity("/api/v1/github/repositories?name=java&perPage=3&page=2", Repository[].class);
 
         assertThat(repositoryResponseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(repositoryResponseEntity.getBody()).isNotEmpty();
+        assertThat(repositoryResponseEntity.getBody().length).isEqualTo(3);
+        assertThat(repositoryResponseEntity.getBody()[0].getLanguage()).isEqualTo("Java");
 
     }
 }

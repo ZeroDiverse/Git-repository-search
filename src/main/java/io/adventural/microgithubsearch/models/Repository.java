@@ -13,12 +13,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class Repository {
-    @JsonProperty(value = "name")
-    private String name;
+    @JsonProperty(value = "language")
+    private String language;
     @JsonProperty(value = "full_name")
     private String fullName;
     @JsonProperty(value = "description")
     private String description;
     @JsonProperty(value = "stargazers_count")
     private Long stargazersCount;
+    @JsonProperty(value = "html_url")
+    private String htmlUrl;
 }

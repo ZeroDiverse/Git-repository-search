@@ -31,7 +31,7 @@ public class RepositoryServiceTest {
 
     @Test
     public void givenMockingIsDoneByMockito_whenGetIsCalled_shouldReturnMockedObject() throws ExecutionException, InterruptedException {
-        List<Repository> repositories = Collections.singletonList(Repository.builder().name("Java").fullName("TheAlgorithms/Java").description("All Algorithms implemented in Java").stargazersCount(33957L).build());
+        List<Repository> repositories = Collections.singletonList(Repository.builder().language("Java").fullName("TheAlgorithms/Java").description("All Algorithms implemented in Java").stargazersCount(33957L).build());
         RepositoryResponse repository = new RepositoryResponse(1L, true, repositories);
         Mockito
                 .when(restTemplate.getForEntity(
